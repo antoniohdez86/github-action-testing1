@@ -1,6 +1,17 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+
+# Ejecuta en evento push para cualquier rama
+# on: [push]
+
+# Ejecuta en evento push solo para la rama main
+on:
+  push:
+    branches: [ "main" ]
+  # Si se habilita, aplicaría tambien apra eventos pull_request
+  # pull_request:
+  #  branches: [ "main" ]
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
